@@ -111,6 +111,10 @@ h3,
     transition: 1s ease-in-out;
 }
 
+.menu-position{
+    background-color: #182557; 
+}
+
 .offcanvas {
     background-color: #182557;
     border: 0;
@@ -132,6 +136,19 @@ h3,
 }
 .contato-title{
     cursor: pointer;
+}
+
+.btn-menu{
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    object-position: center;
+    text-align: center;
+    align-content: center;
+    margin: 0px;
+    padding: 0px;
+
+
 }
 
 /* FOTO PERFIL --------------------------------*/

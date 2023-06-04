@@ -26,7 +26,7 @@ const ModalActive = ({ isOpen, closeModal }) => {
       <Modal
         isOpen={isOpen}
         onRequestClose={closeModal}
-        contentLabel="Canais de Contato"
+        aria-label="Canais de Contato"
         className="modal-centralize corPrimaria p-3 border-0"
       >
         <div className="container-fluid m-0 p-0 border-0">
@@ -136,23 +136,13 @@ const ModalActive = ({ isOpen, closeModal }) => {
   );
 };
 
-function NavbarToggle({isopen,}) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
-
+const NavbarOffcanvas = ({ isOpen, closeNav }) => {
   return (
     <div>
-      {/* ACTIVE:BUTTON */}
-      <div
-        className={`offcanvas offcanvas-end text-white border-2 ${
-          isOpen ? "show" : ""
-        }`}
-        tabIndex="-1"
-        id="offcanvasDarkNavbar"
-        aria-labelledby="offcanvasDarkNavbarLabel"
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={closeNav}
+        className="p-3 mt-5 w-75 h-100 menu-position"
       >
         {/* HEADER NAV */}
         <div className="offcanvas-header">
@@ -161,144 +151,142 @@ function NavbarToggle({isopen,}) {
           </h1>
           <button
             type="button"
-            className="btn-close"
+            className="fs-6 text-center btn botao-fecha-modal borda-menu text-white bg-transparent m-0 p-1 bounded-circle"
+            onClick={closeNav}
             data-bs-dismiss="offcanvas"
             aria-label="Close"
-            onClick={toggleNavbar}
-          ></button>
+          >
+            <span>X</span>
+          </button>
         </div>
 
         {/* BODY NAV */}
         <div className="offcanvas-body">
           <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li className="nav-item">
-              <a href="#home" className="nav-link">
+              <a href="#home" className="nav-link" onClick={closeNav}>
                 <h2 className="nav-texto3">Home</h2>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#sobre-mim" className="nav-link">
+              <a href="#sobre-mim" className="nav-link" onClick={closeNav}>
                 <h2 className="nav-texto3">Sobre mim</h2>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#projetos" className="nav-link">
+              <a href="#projetos" className="nav-link" onClick={closeNav}>
                 <h2 className="nav-texto3">Projetos</h2>
               </a>
             </li>
             <li className="nav-item">
-              <a href="#tech" className="nav-link">
+              <a href="#tech" className="nav-link" onClick={closeNav}>
                 <h2 className="nav-texto3">Tecnologias</h2>
               </a>
             </li>
           </ul>
         </div>
-      </div>
-      {/* FOOTER ASIDE NAV */}
-      <aside className="container-contato-navbar mb-4 pb-0 container-fluid text-center justify-content-center align-content-center text-center align-self-center align-items-center">
-        <button onClick={openModal} className="nav-link">
-          <h1 className="offcanvas-title contato-title">Contato:</h1>
-        </button>
-        <div className="row fs-1 justify-content-center align-content-center text-center align-self-center align-items-center">
-          <div className="col border-0 b-0 p-0">
-            <a
-              href="https://github.com/leoo1992"
-              target="_blank"
-              title="GitHub"
-              rel="noreferrer"
-            >
-              <i className="redes-sociais-menu me-1 justify-content-center align-content-center text-center align-self-center align-items-center fab fa-github">
-                <FontAwesomeIcon icon={["fab", "fa-github"]} />
-              </i>
-            </a>
-            <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
-              GitHub
-            </h6>
+
+        {/* FOOTER ASIDE NAV */}
+        <aside className="container-contato-navbar mb-4 pb-0 container-fluid text-center justify-content-center align-content-center text-center align-self-center align-items-center">
+          <h1 className="offcanvas-title">Contato:</h1>
+          <div className="row fs-1 justify-content-center align-content-center text-center align-self-center align-items-center">
+            <div className="col border-0 b-0 p-0">
+              <a
+                href="https://github.com/leoo1992"
+                target="_blank"
+                title="GitHub"
+                rel="noreferrer"
+              >
+                <i className="redes-sociais-menu me-1 justify-content-center align-content-center text-center align-self-center align-items-center fab fa-github">
+                  <FontAwesomeIcon icon={["fab", "fa-github"]} />
+                </i>
+              </a>
+              <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
+                GitHub
+              </h6>
+            </div>
+            <div className="col border-0 b-0 p-0">
+              <a
+                href="https://www.linkedin.com/in/leocustodio1992/"
+                target="_blank"
+                title="Linkedin"
+                rel="noreferrer"
+              >
+                <i className="redes-sociais-menu me-1 justify-content-center align-content-center text-center align-self-center align-items-center fab fa-linkedin">
+                  <FontAwesomeIcon icon={["fab", "fa-linkedin"]} />
+                </i>
+              </a>
+              <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
+                Linkedin
+              </h6>
+            </div>
+            <div className="col border-0 b-0 p-0">
+              <a
+                href="https://www.instagram.com/leocustodio1/"
+                target="_blank"
+                title="Instagram"
+                rel="noreferrer"
+              >
+                <i className="redes-sociais-menu me-1 justify-content-center align-content-center text-center align-self-center align-items-center fab fa-instagram">
+                  <FontAwesomeIcon icon={["fab", "fa-instagram"]} />
+                </i>
+              </a>
+              <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
+                Insta
+              </h6>
+            </div>
+            <div className="col border-0 b-0 p-0">
+              <a
+                href="https://www.facebook.com/Leonardo.lSantosl"
+                target="_blank"
+                title="Facebook"
+                rel="noreferrer"
+              >
+                <i className="redes-sociais-menu me-1 justify-content-center align-content-center text-center align-self-center align-items-center fab fa-facebook">
+                  <FontAwesomeIcon icon={["fab", "fa-facebook"]} />
+                </i>
+              </a>
+              <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
+                Face
+              </h6>
+            </div>
+            <div className="col border-0 b-0 p-0">
+              <a
+                href={curriculo}
+                target="_blank"
+                download
+                title="Currículo"
+                rel="noreferrer"
+              >
+                <i className="redes-sociais-menu justify-content-center align-content-center text-center align-self-center align-items-center fa-brands fa-file-pdf">
+                  <FontAwesomeIcon icon={faFilePdf} />
+                </i>
+              </a>
+              <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
+                Currículo
+              </h6>
+            </div>
+            <div className="col border-0 b-0 p-0">
+              <a
+                href="https://wa.me/5548999971941?text=Ol%C3%A1+Leonardo+%21"
+                target="_blank"
+                title="Whattsapp"
+                rel="noreferrer"
+              >
+                <i className="redes-sociais-menu justify-content-center align-content-center text-center align-self-center align-items-center fa-brands fa-whatsapp">
+                  <FontAwesomeIcon icon={["fab", "fa-whatsapp"]} />
+                </i>
+              </a>
+              <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
+                Whatts
+              </h6>
+            </div>
           </div>
-          <div className="col border-0 b-0 p-0">
-            <a
-              href="https://www.linkedin.com/in/leocustodio1992/"
-              target="_blank"
-              title="Linkedin"
-              rel="noreferrer"
-            >
-              <i className="redes-sociais-menu me-1 justify-content-center align-content-center text-center align-self-center align-items-center fab fa-linkedin">
-                <FontAwesomeIcon icon={["fab", "fa-linkedin"]} />
-              </i>
-            </a>
-            <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
-              Linkedin
-            </h6>
-          </div>
-          <div className="col border-0 b-0 p-0">
-            <a
-              href="https://www.instagram.com/leocustodio1/"
-              target="_blank"
-              title="Instagram"
-              rel="noreferrer"
-            >
-              <i className="redes-sociais-menu me-1 justify-content-center align-content-center text-center align-self-center align-items-center fab fa-instagram">
-                <FontAwesomeIcon icon={["fab", "fa-instagram"]} />
-              </i>
-            </a>
-            <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
-              Insta
-            </h6>
-          </div>
-          <div className="col border-0 b-0 p-0">
-            <a
-              href="https://www.facebook.com/Leonardo.lSantosl"
-              target="_blank"
-              title="Facebook"
-              rel="noreferrer"
-            >
-              <i className="redes-sociais-menu me-1 justify-content-center align-content-center text-center align-self-center align-items-center fab fa-facebook">
-                <FontAwesomeIcon icon={["fab", "fa-facebook"]} />
-              </i>
-            </a>
-            <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
-              Face
-            </h6>
-          </div>
-          <div className="col border-0 b-0 p-0">
-            <a
-              href={curriculo}
-              target="_blank"
-              download
-              title="Currículo"
-              rel="noreferrer"
-            >
-              <i className="redes-sociais-menu justify-content-center align-content-center text-center align-self-center align-items-center fa-brands fa-file-pdf">
-                <FontAwesomeIcon icon={faFilePdf} />
-              </i>
-            </a>
-            <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
-              Currículo
-            </h6>
-          </div>
-          <div className="col border-0 b-0 p-0">
-            <a
-              href="https://wa.me/5548999971941?text=Ol%C3%A1+Leonardo+%21"
-              target="_blank"
-              title="Whattsapp"
-              rel="noreferrer"
-            >
-              <i className="redes-sociais-menu justify-content-center align-content-center text-center align-self-center align-items-center fa-brands fa-whatsapp">
-                <FontAwesomeIcon icon={["fab", "fa-whatsapp"]} />
-              </i>
-            </a>
-            <h6 className="me-1 aside-menu-canvas justify-content-center align-content-center text-center align-self-center align-items-center">
-              Whatts
-            </h6>
-          </div>
-        </div>
-      </aside>
+        </aside>
+      </Modal>
     </div>
-  
-  
   );
-  
-}
+};
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -311,24 +299,36 @@ function App() {
     setModalIsOpen(false);
   };
 
+  const [navIsOpen, setNavIsOpen] = useState(false);
+
+  const openNav = () => {
+    setNavIsOpen(true);
+  };
+
+  const closeNav = () => {
+    setNavIsOpen(false);
+  };
+
   return (
     <>
       {/*-- NAVBAR */}
       <nav className="navbar navbar-dark fixed-top p-1 m-0">
         <div className="nave-container container-fluid m-0 p-0">
           <ul className="nav nav-ul m-0 p-0">
-            <a
-              className="nav-link text-white text-decoration-none fs-6 fw-bold"
-              href="#home"
-            >
-              <h6 className="nav-texto2">Leonardo Santos</h6>
-            </a>
+            <li className="nav-item">
+              <a
+                className="nav-link text-white text-decoration-none fs-6 fw-bold"
+                href="#home"
+              >
+                <span className="nav-texto2">Leonardo Santos</span>
+              </a>
+            </li>
             <li className="nav-item">
               <a
                 className="nav-link text-white text-decoration-none fs-6 fw-bold"
                 href="#sobre-mim"
               >
-                <h6 className="nav-texto">Sobre</h6>
+                <span className="nav-texto">Sobre</span>
               </a>
             </li>
             <li className="nav-item">
@@ -336,7 +336,7 @@ function App() {
                 className="nav-link text-white text-decoration-none fs-6 fw-bold"
                 href="#projetos"
               >
-                <h6 className="nav-texto">Projetos</h6>
+                <span className="nav-texto">Projetos</span>
               </a>
             </li>
             <li className="nav-item">
@@ -344,7 +344,7 @@ function App() {
                 className="nav-link text-white text-decoration-none fs-6 fw-bold"
                 href="#tech"
               >
-                <h6 className="nav-texto">Tecnologias</h6>
+                <span className="nav-texto">Tecnologias</span>
               </a>
             </li>
             <li className="nav-item">
@@ -352,34 +352,26 @@ function App() {
                 className="nav-link text-white text-decoration-none fs-6 fw-bold"
                 onClick={openModal}
               >
-                <h6 className="nav-texto">Contato</h6>
+                <span className="nav-texto">Contato</span>
               </button>
             </li>
           </ul>
-          {/* BUTTON */}
-          <button
-            className={`offcanvas offcanvas-end text-white border-2 ${
-              isOpen ? "show" : ""
-            }`}
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasDarkNavbar"
-            aria-controls="offcanvasDarkNavbar"
-            aria-label="Toggle navigation"
-            onClick={toggleNavbar}
-          >
-            {/* ACTIVE:BUTTON */}
-            <span className="botao-menu navbar-toggler-icon w-50 p-0 m-0"></span>
-            <br />
-            <h6 className="botao-menu p-0 m-0">Menu</h6>
-          </button>
-          <div
-            className="offcanvas offcanvas-end text-white border-2"
-            tabIndex="-1"
-            id="offcanvasDarkNavbar"
-            aria-labelledby="offcanvasDarkNavbarLabel"
-          ></div>
+          {/* BUTTON NAVBAR TOGGLER */}
+          <div className="nav-item btn-menu navbar-dark">
+            <button
+              type="button"
+              className="navbar-toggler botao-menu borda-menu"
+              onClick={openNav}
+              data-bs-toggle="offcanvas"
+              data-bs-target="offcanvasDarkNavbar"
+              aria-controls=" offcanvasDarkNavbar"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          </div>
         </div>
+        <NavbarOffcanvas isOpen={navIsOpen} closeNav={closeNav} />
       </nav>
       <br id="home" />
       <br />
@@ -409,15 +401,16 @@ function App() {
             </div>
             <div className="col coluna m-0 p-0"></div>
           </div>
+          <br id="sobre-mim" />
+          <br />
         </div>
       </section>
-      <br />
       {/* SOBRE MIM */}
       <section className="p-3 corPrimaria">
         <h3 className="text-center">Sobre mim</h3>
         <div className="container-fluid p-0 m-0 justify-content-center align-content-center align-self-center align-items-center">
           <div className="row p-0 m-0 justify-content-center align-content-center align-self-center align-items-center">
-            <p className="texto-sobre m-0 p-0 fw-bold" id="projetos">
+            <p className="texto-sobre m-0 p-0 fw-bold">
               Me chamo Leonardo Santos Custódio, nasci em abril de 1992, sou
               natural de Imbituba, Santa Catarina. Atualmente estou finalizando
               o curso Técnico em Desenvolvimento de Sistemas no SENAI de
@@ -428,7 +421,7 @@ function App() {
               realidade.
             </p>
           </div>
-          <br />
+          <br id="projetos" />
         </div>
       </section>
       <br />
