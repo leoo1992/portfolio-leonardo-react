@@ -13,10 +13,11 @@ import react from "./assets/react.png";
 import curriculo from "./assets/Leonardo Curriculo.pdf";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
 
-library.add(fab);
+library.add(fab, fas);
 
 Modal.setAppElement("#root");
 
@@ -137,21 +138,33 @@ const ModalActive = ({ isOpen, closeModal }) => {
 };
 
 const NavbarOffcanvas = ({ isOpen, closeNav }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
   return (
     <div>
       <Modal
         isOpen={isOpen}
         onRequestClose={closeNav}
-        className="p-3 mt-5 w-75 h-100 menu-position"
+        className="p-3 w-75 h-100 nav-position"
       >
         {/* HEADER NAV */}
-        <div className="offcanvas-header">
-          <h1 className="offcanvas-title" id="offcanvasDarkNavbarLabel">
+        <div className="offcanvas-header text-center">
+          <h1
+            className="offcanvas-title offcanvas-menu container-contato-navbar container-fluid text-center justify-content-center align-content-center text-center align-self-center align-items-center"
+            id="offcanvasDarkNavbarLabel"
+          >
             Menu
           </h1>
           <button
             type="button"
-            className="fs-6 text-center btn botao-fecha-modal borda-menu text-white bg-transparent m-0 p-1 bounded-circle"
+            className="btn-menu-fecha fs-6 text-center btn botao-fecha-modal borda-menu text-white bg-transparent m-0 p-1"
             onClick={closeNav}
             data-bs-dismiss="offcanvas"
             aria-label="Close"
@@ -161,26 +174,35 @@ const NavbarOffcanvas = ({ isOpen, closeNav }) => {
         </div>
 
         {/* BODY NAV */}
-        <div className="offcanvas-body">
+        <div className="offcanvas-body p-3">
           <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li className="nav-item">
               <a href="#home" className="nav-link" onClick={closeNav}>
-                <h2 className="nav-texto3">Home</h2>
+                <h2 className="nav-texto3">
+                  <FontAwesomeIcon icon={["fa", "fa-house"]} /> Home
+                </h2>
               </a>
             </li>
             <li className="nav-item">
               <a href="#sobre-mim" className="nav-link" onClick={closeNav}>
-                <h2 className="nav-texto3">Sobre mim</h2>
+                <h2 className="nav-texto3">
+                  <FontAwesomeIcon icon={["fa", "fa-user-check"]} /> Sobre mim
+                </h2>
               </a>
             </li>
             <li className="nav-item">
               <a href="#projetos" className="nav-link" onClick={closeNav}>
-                <h2 className="nav-texto3">Projetos</h2>
+                <h2 className="nav-texto3">
+                  <FontAwesomeIcon icon={["fa", "fa-chalkboard-user"]} />{" "}
+                  Projetos
+                </h2>
               </a>
             </li>
             <li className="nav-item">
               <a href="#tech" className="nav-link" onClick={closeNav}>
-                <h2 className="nav-texto3">Tecnologias</h2>
+                <h2 className="nav-texto3">
+                  <FontAwesomeIcon icon={["fa", "fa-gears"]} /> Tecnologias
+                </h2>
               </a>
             </li>
           </ul>
@@ -188,7 +210,10 @@ const NavbarOffcanvas = ({ isOpen, closeNav }) => {
 
         {/* FOOTER ASIDE NAV */}
         <aside className="container-contato-navbar mb-4 pb-0 container-fluid text-center justify-content-center align-content-center text-center align-self-center align-items-center">
-          <h1 className="offcanvas-title">Contato:</h1>
+          <h1 className="offcanvas-title contato-title" onClick={openModal}>
+            Contato:
+          </h1>
+          <ModalActive isOpen={modalIsOpen} closeModal={closeModal} />
           <div className="row fs-1 justify-content-center align-content-center text-center align-self-center align-items-center">
             <div className="col border-0 b-0 p-0">
               <a
@@ -314,37 +339,50 @@ function App() {
       {/*-- NAVBAR */}
       <nav className="navbar navbar-dark fixed-top p-1 m-0">
         <div className="nave-container container-fluid m-0 p-0">
-          <ul className="nav nav-ul m-0 p-0">
+          <ul className="nav nav-ul m-0 p-0" onClick={closeNav}>
             <li className="nav-item">
               <a
                 className="nav-link text-white text-decoration-none fs-6 fw-bold"
                 href="#home"
+                onClick={closeModal}
               >
-                <span className="nav-texto2">Leonardo Santos</span>
+                <span className="nav-texto2">
+                  <FontAwesomeIcon icon={["fa", "fa-house"]} /> Leonardo Santos
+                </span>
               </a>
             </li>
             <li className="nav-item">
               <a
                 className="nav-link text-white text-decoration-none fs-6 fw-bold"
                 href="#sobre-mim"
+                onClick={closeModal}
               >
-                <span className="nav-texto">Sobre</span>
+                <span className="nav-texto">
+                  <FontAwesomeIcon icon={["fa", "fa-user-check"]} /> Sobre
+                </span>
               </a>
             </li>
             <li className="nav-item">
               <a
                 className="nav-link text-white text-decoration-none fs-6 fw-bold"
                 href="#projetos"
+                onClick={closeModal}
               >
-                <span className="nav-texto">Projetos</span>
+                <span className="nav-texto">
+                  <FontAwesomeIcon icon={["fa", "fa-chalkboard-user"]} />{" "}
+                  Projetos
+                </span>
               </a>
             </li>
             <li className="nav-item">
               <a
                 className="nav-link text-white text-decoration-none fs-6 fw-bold"
                 href="#tech"
+                onClick={closeModal}
               >
-                <span className="nav-texto">Tecnologias</span>
+                <span className="nav-texto">
+                  <FontAwesomeIcon icon={["fa", "fa-gears"]} /> Tecnologias
+                </span>
               </a>
             </li>
             <li className="nav-item">
@@ -352,12 +390,14 @@ function App() {
                 className="nav-link text-white text-decoration-none fs-6 fw-bold"
                 onClick={openModal}
               >
-                <span className="nav-texto">Contato</span>
+                <span className="nav-texto">
+                  <FontAwesomeIcon icon={["fa", "fa-phone"]} /> Contato
+                </span>
               </button>
             </li>
           </ul>
           {/* BUTTON NAVBAR TOGGLER */}
-          <div className="nav-item btn-menu navbar-dark">
+          <div className="nav-item btn-menu navbar-dark " onClick={closeModal}>
             <button
               type="button"
               className="navbar-toggler botao-menu borda-menu"
@@ -367,7 +407,7 @@ function App() {
               aria-controls=" offcanvasDarkNavbar"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon" onClick={closeModal}></span>
             </button>
           </div>
         </div>

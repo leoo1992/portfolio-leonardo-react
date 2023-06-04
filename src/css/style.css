@@ -35,6 +35,9 @@ h3,
     font-weight: bold;
 }
 
+.offcanvas-menu{
+    text-indent: 2%;
+}
 
 /* NAVBAR --------------------------------------*/
 
@@ -42,6 +45,8 @@ h3,
     background-color: #182557;
     transition: 1s ease-in-out;
     box-shadow: 0px 0px 15px rgb(210, 1, 252);
+    position: fixed;
+    z-index: 0;
 }
 
 #offcanvasDarkNavbar {
@@ -49,11 +54,6 @@ h3,
     min-width: 45%;
 
 }
-
-.offcanvas-title {
-    margin-left: 10%;
-}
-
 .nav-texto2,
 .nav-texto3,
 .navbar-text {
@@ -66,7 +66,8 @@ h3,
 
 .nav-texto:hover,
 .navbar-text:hover,
-.offcanvas-title:hover, h3:hover{
+.offcanvas-title:hover,
+h3:hover {
     transition: 1s ease-in-out;
     text-shadow: 1px 1px 30px rgb(199, 138, 255);
 }
@@ -87,7 +88,7 @@ h3,
 
 .container-contato-navbar {
     max-width: 100%;
-    padding-right: 10%;
+    padding-right: 5%;
 }
 
 .botao-menu {
@@ -99,7 +100,7 @@ h3,
     box-shadow: 1px 1px 1px 1px rgb(199, 138, 255), -1px -1px 1px 1px #04d6b9;
 }
 
-.borda-menu:hover  {
+.borda-menu:hover {
     background-color: black;
     transition: 1s ease-in-out;
     box-shadow: -1px -1px 1px 1px rgb(199, 138, 255), 1px 1px 1px 1px #04d6b9;
@@ -111,8 +112,24 @@ h3,
     transition: 1s ease-in-out;
 }
 
-.menu-position{
-    background-color: #182557; 
+.menu-position {
+    background-color: #182557;
+    margin-left: 25%;
+    transition: 1s ease-in-out;
+    border: none;
+}
+
+.nav-position{
+    background-color: #182557;
+    margin-left: 25%;
+    transition: 1s ease-in-out;
+    border: none;
+    z-index: 1;
+}
+
+.menu-position:hover {
+    transition: 1s ease-in-out;
+    box-shadow: 0px 0px 15px rgb(210, 1, 252);
 }
 
 .offcanvas {
@@ -134,11 +151,12 @@ h3,
     transition: 1s ease-in-out;
     box-shadow: 0px 0px 15px rgb(210, 1, 252);
 }
-.contato-title{
+
+.contato-title {
     cursor: pointer;
 }
 
-.btn-menu{
+.btn-menu {
     justify-content: center;
     align-items: center;
     align-self: center;
@@ -175,11 +193,12 @@ h3,
     text-align: center;
 }
 
-.btn-contato{
-        box-shadow: 1px 1px 1px 1px rgb(199, 138, 255), -1px -1px 1px 1px #04d6b9;
-        background-color: #182557;
+.btn-contato {
+    box-shadow: 1px 1px 1px 1px rgb(199, 138, 255), -1px -1px 1px 1px #04d6b9;
+    background-color: #182557;
 }
-.btn-contato:hover{
+
+.btn-contato:hover {
     color: #04d6b9;
     font-size: large;
     transition: 1s ease-in-out;
@@ -269,13 +288,12 @@ footer:hover {
 /* MODAL */
 
 
-.modal-centralize{
+.modal-centralize {
     position: relative;
     top: 15%;
     padding: 10px;
 }
 
-.modal-titulo{
+.modal-titulo {
     text-indent: 12%;
 }
-
