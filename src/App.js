@@ -11,11 +11,14 @@ import js from "./assets/js.png";
 import mysql from "./assets/mysql.png";
 import react from "./assets/react.png";
 import curriculo from "./assets/Leonardo Curriculo.pdf";
+import pokedex from "./assets/pokedex.png";
+import imc from "./assets/imc.png";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import Carousel from "react-bootstrap/Carousel";
 
 library.add(fab, fas);
 
@@ -337,7 +340,7 @@ function App() {
   return (
     <>
       {/*-- NAVBAR */}
-      <nav className="navbar navbar-dark fixed-top p-1 m-0">
+      <nav className="navbar navbar-topo navbar-dark p-1 m-0">
         <div className="nave-container container-fluid m-0 p-0">
           <ul className="nav nav-ul m-0 p-0" onClick={closeNav}>
             <li className="nav-item">
@@ -416,12 +419,11 @@ function App() {
       <br id="home" />
       <br />
       {/* FOTO */}
-      <section className="local-foto text-center pt-5 m-0">
+      <section className="local-foto text-center m-0">
         <div className="foto-container container-fluid m-0 justify-content-center align-content-center text-center align-self-center align-items-center">
           <div className="row m-0 p-0">
             <div className="col coluna m-0 p-0"></div>
             <div className="col-4 coluna-centro-foto corPrimaria m-0 pt-3">
-              <br />
               <img
                 className="foto-perfil m-0 p-0"
                 src={foto3x4}
@@ -468,46 +470,121 @@ function App() {
       {/* PROJETOS CARD */}
       <div className="corPrimaria">
         <br />
-        <h3 className="text-center p-2">Projetos</h3>
-        <div className="container p-0 border-0">
-          <div className="row m-0 p-0 border-0">
-            <div className="col m-0 p-0 border-0">
-              <div className="card mb-4 border-0 bg-transparent">
+        <h3 className="text-center">Projetos</h3>
+        <div className="w-100 h-100">
+          <Carousel className="carousel-index w-100 h-100 m-0 p-0">
+
+            <Carousel.Item className="w-100 h-100 m-0 p-0 ">
+              <div class="flex-container-project m-0 p-0 ">
                 <img
-                  className="card-img-top d-block border-0 bg-transparent"
-                  alt="project"
-                  style={{ height: "225px" }}
+                  className="w-75 h-75 rounded-5 m-0 p-0"
+                  src={pokedex}
+                  alt="pokedex"
                 />
-                <div className="card-body bg-black m-0 border-0">
-                  <p className="card-text text-center fs-5">Pokédex</p>
-                  <p className="card-text fs-6 fw-light">
-                    Tecnologias utilizadas:
-                  </p>
-                  <ul>
-                    <li className="fs-6 fw-light">Html</li>
-                    <li className="fs-6 fw-light">Javascript</li>
-                    <li className="fs-6 fw-light">Css</li>
-                  </ul>
-                  <div className="d-flex justify-content-center align-items-center">
-                    <div className="btn-group-sm">
-                      <button
-                        type="button"
-                        className="btn-contato btn-dark btn fw-bold"
-                      >
-                        Ver Projeto
-                      </button>
-                      <button
-                        type="button"
-                        className="btn-contato btn-dark btn fw-bold"
-                      >
-                        Ver Código
-                      </button>
-                    </div>
+              </div>
+
+              <div className="container-fluid mt-5">
+                <div className="row mt-5">
+                  <div className="col mt-5">
+                    <br />
+                    <br className="mt-5" />
+                    <Carousel.Caption className="p-3 rounded-5 m-0">
+                      <div>
+                        <h3 className="card-text text-center fs-6 fw-bolder">
+                          Projeto Pokédex API
+                        </h3>
+                      </div>
+                      <div className="btn-group p-0 m-0 ">
+                        <a
+                          href="https://i98hx2.csb.app/"
+                          target="_blank"
+                          title="Linkedin"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark btn m-1 fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Projeto</span>
+                          </button>
+                        </a>
+                        <a
+                          href="https://github.com/leoo1992/PokeDex"
+                          target="_blank"
+                          title="Linkedin"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark m-1 btn fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Código</span>
+                          </button>
+                        </a>
+                      </div>
+                    </Carousel.Caption>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </Carousel.Item>
+
+            <Carousel.Item className="w-100 h-100 m-0 p-0 ">
+              <div class="flex-container-project m-0 p-0 ">
+                <img
+                  className="w-75 h-75 rounded-5 m-0 p-0"
+                  src={imc}
+                  alt="imc"
+                />
+              </div>
+
+              <div className="container-fluid mt-5">
+                <div className="row mt-5">
+                  <div className="col mt-5">
+                    <br />
+                    <br className="mt-5" />
+                    <Carousel.Caption className="p-3 rounded-5 m-0">
+                      <div>
+                        <h3 className="card-text text-center fs-6 fw-bolder">
+                          Calculadora IMC
+                        </h3>
+                      </div>
+                      <div className="btn-group p-0 m-0 ">
+                        <a
+                          href="https://gsutqs.csb.app/"
+                          target="_blank"
+                          title="Linkedin"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark btn m-1 fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Projeto</span>
+                          </button>
+                        </a>
+                        <a
+                          href="https://github.com/leoo1992/Calculadora_IMC"
+                          target="_blank"
+                          title="Linkedin"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark m-1 btn fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Código</span>
+                          </button>
+                        </a>
+                      </div>
+                    </Carousel.Caption>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
+
+
+
+          </Carousel>
         </div>
         <br />
       </div>

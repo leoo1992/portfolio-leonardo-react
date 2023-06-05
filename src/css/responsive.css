@@ -120,6 +120,12 @@
     .coluna-centro-foto {
         min-width: 90%;
     }
+
+    .btn-project{
+        font-size: 75%;
+        padding: 0px;
+        margin: 0px;
+    }
 }
 
 @media (max-width:383px) {
@@ -154,6 +160,9 @@
         margin: 0px;
         padding: 0px;
         font-size: small;
+    }
+    .nav-texto3, .offcanvas-title {
+        font-size: medium;
     }
 }
 
