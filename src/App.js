@@ -13,6 +13,13 @@ import react from "./assets/react.png";
 import curriculo from "./assets/Leonardo Curriculo.pdf";
 import pokedex from "./assets/pokedex.png";
 import imc from "./assets/imc.png";
+import kanban from "./assets/kanban.png";
+import calculoViagem from "./assets/calculoViagem.png";
+import medias from "./assets/medias.png";
+import caixaEletronico from "./assets/caixaEletronico.png";
+import calculadora from "./assets/calculadora.png";
+import mediasVarias from "./assets/mediasVarias.png";
+import valoresIguais from "./assets/valoresIguais.png";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -474,10 +481,11 @@ function App() {
         <div className="w-100 h-100">
           <Carousel className="carousel-index w-100 h-100 m-0 p-0">
 
-            <Carousel.Item className="w-100 h-100 m-0 p-0 ">
-              <div class="flex-container-project m-0 p-0 ">
+            {/* 1 - Pokedex*/}
+            <Carousel.Item className=" w-100 h-100 m-0 p-0 ">
+              <div className="flex-container-project m-0 p-0 ">
                 <img
-                  className="w-75 h-75 rounded-5 m-0 p-0"
+                  className="img-carousel w-75 h-75 rounded-5 m-0 p-0"
                   src={pokedex}
                   alt="pokedex"
                 />
@@ -498,7 +506,7 @@ function App() {
                         <a
                           href="https://i98hx2.csb.app/"
                           target="_blank"
-                          title="Linkedin"
+                          title="Pokedex"
                           rel="noreferrer"
                         >
                           <button
@@ -511,7 +519,7 @@ function App() {
                         <a
                           href="https://github.com/leoo1992/PokeDex"
                           target="_blank"
-                          title="Linkedin"
+                          title="Github"
                           rel="noreferrer"
                         >
                           <button
@@ -528,10 +536,11 @@ function App() {
               </div>
             </Carousel.Item>
 
-            <Carousel.Item className="w-100 h-100 m-0 p-0 ">
-              <div class="flex-container-project m-0 p-0 ">
+            {/* 2 - Calculadora IMC*/}
+            <Carousel.Item className=" w-100 h-100 m-0 p-0 ">
+              <div className="flex-container-project m-0 p-0 ">
                 <img
-                  className="w-75 h-75 rounded-5 m-0 p-0"
+                  className="img-carousel w-75 h-75 rounded-5 m-0 p-0"
                   src={imc}
                   alt="imc"
                 />
@@ -545,14 +554,14 @@ function App() {
                     <Carousel.Caption className="p-3 rounded-5 m-0">
                       <div>
                         <h3 className="card-text text-center fs-6 fw-bolder">
-                          Calculadora IMC
+                          Calculadora IMC em JS
                         </h3>
                       </div>
                       <div className="btn-group p-0 m-0 ">
                         <a
                           href="https://gsutqs.csb.app/"
                           target="_blank"
-                          title="Linkedin"
+                          title="Calculadora Imc"
                           rel="noreferrer"
                         >
                           <button
@@ -565,7 +574,7 @@ function App() {
                         <a
                           href="https://github.com/leoo1992/Calculadora_IMC"
                           target="_blank"
-                          title="Linkedin"
+                          title="Github"
                           rel="noreferrer"
                         >
                           <button
@@ -582,7 +591,391 @@ function App() {
               </div>
             </Carousel.Item>
 
+            {/* 3 - Kanban*/}
+            <Carousel.Item className=" w-100 h-100 m-0 p-0 ">
+              <div className="flex-container-project m-0 p-0 ">
+                <img
+                  className=" img-carousel w-75 h-75 rounded-5 m-0 p-0"
+                  src={kanban}
+                  alt="kanban"
+                />
+              </div>
 
+              <div className="container-fluid mt-5">
+                <div className="row mt-5">
+                  <div className="col mt-5">
+                    <br />
+                    <br className="mt-5" />
+                    <Carousel.Caption className="p-3 rounded-5 m-0">
+                      <div>
+                        <h3 className="card-text text-center fs-6 fw-bolder">
+                          Kanban em React
+                        </h3>
+                      </div>
+                      <div className="btn-group p-0 m-0 ">
+                        <a
+                          href="https://qqi5wu-3000.csb.app/"
+                          target="_blank"
+                          title="Kanban"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark btn m-1 fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Projeto</span>
+                          </button>
+                        </a>
+                        <a
+                          href="https://github.com/leoo1992/Kanban_React"
+                          target="_blank"
+                          title="Github"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark m-1 btn fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Código</span>
+                          </button>
+                        </a>
+                      </div>
+                    </Carousel.Caption>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
+
+            {/* 4 - Custo viagem*/}
+            <Carousel.Item className=" w-100 h-100 m-0 p-0 ">
+              <div className="flex-container-project m-0 p-0 ">
+                <img
+                  className="img-carousel w-75 h-75 rounded-5 m-0 p-0"
+                  src={calculoViagem}
+                  alt="calculoViagem"
+                />
+              </div>
+
+              <div className="container-fluid mt-5">
+                <div className="row mt-5">
+                  <div className="col mt-5">
+                    <br />
+                    <br className="mt-5" />
+                    <Carousel.Caption className="p-3 rounded-5 m-0">
+                      <div>
+                        <h3 className="card-text text-center fs-6 fw-bolder">
+                          Calculo Custo de Viagem
+                        </h3>
+                      </div>
+                      <div className="btn-group p-0 m-0 ">
+                        <a
+                          href="https://cddppj.csb.app/"
+                          target="_blank"
+                          title="Calculo Custo de Viagem"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark btn m-1 fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Projeto</span>
+                          </button>
+                        </a>
+                        <a
+                          href="https://github.com/leoo1992/CustoViagem"
+                          target="_blank"
+                          title="Github"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark m-1 btn fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Código</span>
+                          </button>
+                        </a>
+                      </div>
+                    </Carousel.Caption>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
+
+            {/* 5 - Medias Simples*/}
+            <Carousel.Item className=" w-100 h-100 m-0 p-0 ">
+              <div className="flex-container-project m-0 p-0 ">
+                <img
+                  className="img-carousel w-75 h-75 rounded-5 m-0 p-0"
+                  src={medias}
+                  alt="medias"
+                />
+              </div>
+
+              <div className="container-fluid mt-5">
+                <div className="row mt-5">
+                  <div className="col mt-5">
+                    <br />
+                    <br className="mt-5" />
+                    <Carousel.Caption className="p-3 rounded-5 m-0">
+                      <div>
+                        <h3 className="card-text text-center fs-6 fw-bolder">
+                          Calculadora de médias JS
+                        </h3>
+                      </div>
+                      <div className="btn-group p-0 m-0 ">
+                        <a
+                          href="https://n9gxh2.csb.app/"
+                          target="_blank"
+                          title="medias"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark btn m-1 fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Projeto</span>
+                          </button>
+                        </a>
+                        <a
+                          href="https://github.com/leoo1992/desafio"
+                          target="_blank"
+                          title="Github"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark m-1 btn fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Código</span>
+                          </button>
+                        </a>
+                      </div>
+                    </Carousel.Caption>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
+
+            {/* 6 Contador de cedulas*/}
+            <Carousel.Item className=" w-100 h-100 m-0 p-0 ">
+              <div className="flex-container-project m-0 p-0 ">
+                <img
+                  className="img-carousel w-75 h-75 rounded-5 m-0 p-0"
+                  src={caixaEletronico}
+                  alt="caixaEletronico"
+                />
+              </div>
+
+              <div className="container-fluid mt-5">
+                <div className="row mt-5">
+                  <div className="col mt-5">
+                    <br />
+                    <br className="mt-5" />
+                    <Carousel.Caption className="p-3 rounded-5 m-0">
+                      <div>
+                        <h3 className="card-text text-center fs-6 fw-bolder">
+                          Contador de notas - caixa eletronico em JS
+                        </h3>
+                      </div>
+                      <div className="btn-group p-0 m-0 ">
+                        <a
+                          href="https://52rmqb.csb.app/"
+                          target="_blank"
+                          title="caixaEletronico"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark btn m-1 fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Projeto</span>
+                          </button>
+                        </a>
+                        <a
+                          href="https://github.com/leoo1992/ContadorDeNotasDisponiveis"
+                          target="_blank"
+                          title="Github"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark m-1 btn fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Código</span>
+                          </button>
+                        </a>
+                      </div>
+                    </Carousel.Caption>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
+
+            {/* 7 Calculadora*/}
+            <Carousel.Item className=" w-100 h-100 m-0 p-0 ">
+              <div className="flex-container-project m-0 p-0 ">
+                <img
+                  className="img-carousel w-75 h-75 rounded-5 m-0 p-0"
+                  src={calculadora}
+                  alt="calculadora"
+                />
+              </div>
+
+              <div className="container-fluid mt-5">
+                <div className="row mt-5">
+                  <div className="col mt-5">
+                    <br />
+                    <br className="mt-5" />
+                    <Carousel.Caption className="p-3 rounded-5 m-0">
+                      <div>
+                        <h3 className="card-text text-center fs-6 fw-bolder">
+                          Calculadora em JS
+                        </h3>
+                      </div>
+                      <div className="btn-group p-0 m-0 ">
+                        <a
+                          href="https://w2qe5y.csb.app/#"
+                          target="_blank"
+                          title="calculadora"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark btn m-1 fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Projeto</span>
+                          </button>
+                        </a>
+                        <a
+                          href="https://github.com/leoo1992/CalculadoraJavaScript"
+                          target="_blank"
+                          title="Github"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark m-1 btn fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Código</span>
+                          </button>
+                        </a>
+                      </div>
+                    </Carousel.Caption>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
+
+            {/* 8 Media Varios*/}
+            <Carousel.Item className=" w-100 h-100 m-0 p-0 ">
+              <div className="flex-container-project m-0 p-0 ">
+                <img
+                  className="img-carousel w-75 h-75 rounded-5 m-0 p-0"
+                  src={mediasVarias}
+                  alt="mediasVarias"
+                />
+              </div>
+
+              <div className="container-fluid mt-5">
+                <div className="row mt-5">
+                  <div className="col mt-5">
+                    <br />
+                    <br className="mt-5" />
+                    <Carousel.Caption className="p-3 rounded-5 m-0">
+                      <div>
+                        <h3 className="card-text text-center fs-6 fw-bolder">
+                          Calculadora de médias de varios Valores em JS
+                        </h3>
+                      </div>
+                      <div className="btn-group p-0 m-0 ">
+                        <a
+                          href="https://kpftqh.csb.app/"
+                          target="_blank"
+                          title="mediasVarias"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark btn m-1 fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Projeto</span>
+                          </button>
+                        </a>
+                        <a
+                          href="https://github.com/leoo1992/MediaVariosValores"
+                          target="_blank"
+                          title="Github"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark m-1 btn fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Código</span>
+                          </button>
+                        </a>
+                      </div>
+                    </Carousel.Caption>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
+
+            {/* 9 Verificador de Igualdade em vetores*/}
+            <Carousel.Item className=" w-100 h-100 m-0 p-0 ">
+              <div className="flex-container-project m-0 p-0 ">
+                <img
+                  className="img-carousel w-75 h-75 rounded-5 m-0 p-0"
+                  src={valoresIguais}
+                  alt="valoresIguais"
+                />
+              </div>
+
+              <div className="container-fluid mt-5">
+                <div className="row mt-5">
+                  <div className="col mt-5">
+                    <br />
+                    <br className="mt-5" />
+                    <Carousel.Caption className="p-3 rounded-5 m-0">
+                      <div>
+                        <h3 className="card-text text-center fs-6 fw-bolder">
+                          Verificador de numeros iguais em vetores
+                        </h3>
+                      </div>
+                      <div className="btn-group p-0 m-0 ">
+                        <a
+                          href="https://x2i0l7.csb.app/"
+                          target="_blank"
+                          title="valoresIguais
+                          "
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark btn m-1 fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Projeto</span>
+                          </button>
+                        </a>
+                        <a
+                          href="https://github.com/leoo1992/verificadorValoresIguais"
+                          target="_blank"
+                          title="Github"
+                          rel="noreferrer"
+                        >
+                          <button
+                            type="button"
+                            className="btn-contato btn-dark m-1 btn fw-bolder fs-6 p-1"
+                          >
+                            <span className="btn-project">Ver Código</span>
+                          </button>
+                        </a>
+                      </div>
+                    </Carousel.Caption>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
 
           </Carousel>
         </div>

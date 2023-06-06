@@ -243,6 +243,10 @@ h3:hover {
     z-index: 0;
 }
 
+.img-carousel{
+    border: 5px solid rgb(199, 138, 255);
+
+}
 
 .carousel-indicators{
 bottom: -1%;   
