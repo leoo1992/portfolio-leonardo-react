@@ -2,7 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "react-modal";
-import "react-toastify/dist/ReactToastify.css";
+
 // Bootstrap
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,12 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./css/style.css";
 import "./css/responsive.css";
 // assets
-import css from "./assets/css3.png";
-import html from "./assets/html.png";
 import foto3x4 from "./assets/foto3x4.png";
-import js from "./assets/js.png";
-import mysql from "./assets/mysql.png";
-import react from "./assets/react.png";
 import curriculo from "./assets/Leonardo Curriculo.pdf";
 import pokedex from "./assets/pokedex.png";
 import imc from "./assets/imc.png";
@@ -33,13 +28,14 @@ import mediasVarias from "./assets/mediasVarias.png";
 import valoresIguais from "./assets/valoresIguais.png";
 
 //COMPONENTS
-import SobreMin from "./components/SobreMin";
-import Footer from "./components/Footer";
+import SobreMin from "./components/SobreMin"; 
+import Tech from "./components/Tech"; 
+
 
 library.add(fab, fas);
 Modal.setAppElement("#root");
 // Modal
-const ModalActive = ({ isOpen, closeModal }) => {
+function ModalActive({ isOpen, closeModal }){
   return (
     <div className="p-0 mt-5">
       <Modal
@@ -154,12 +150,12 @@ const ModalActive = ({ isOpen, closeModal }) => {
   );
 };
 // Navbar
-const NavbarOffcanvas = ({ isOpen, closeNav }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const openModal = () => {
+function NavbarOffcanvas({ isOpen, closeNav }){
+  let [modalIsOpen, setModalIsOpen] = useState(false);
+  let openModal = () => {
     setModalIsOpen(true);
   };
-  const closeModal = () => {
+  let closeModal = () => {
     setModalIsOpen(false);
   };
   return (
@@ -325,19 +321,21 @@ const NavbarOffcanvas = ({ isOpen, closeNav }) => {
     </div>
   );
 };
-const App = () => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const openModal = () => {
+
+
+function App(){
+  let [modalIsOpen, setModalIsOpen] = useState(false);
+  let openModal = () => {
     setModalIsOpen(true);
   };
-  const closeModal = () => {
+  let closeModal = () => {
     setModalIsOpen(false);
   };
-  const [navIsOpen, setNavIsOpen] = useState(false);
-  const openNav = () => {
+  let [navIsOpen, setNavIsOpen] = useState(false);
+  let openNav = () => {
     setNavIsOpen(true);
   };
-  const closeNav = () => {
+  let closeNav = () => {
     setNavIsOpen(false);
   };
   return (
@@ -942,61 +940,7 @@ const App = () => {
       </div>
       <br />
       {/*TECHS */}
-      <aside className="corPrimaria text-center p-2">
-        <h3 id="tech" className="p-2">
-          Tecnologias
-        </h3>
-        <div className="container-fluid text-center justify-content-center align-content-center text-center align-self-center align-items-center">
-          <div className="row fs-1 justify-content-center align-content-center text-center align-self-center align-items-center">
-            <div className="col border-0 b-0 p-1">
-              <img
-                className="techaside tech-card rounded-circle p-0 w-auto m-0 justify-content-center align-content-center text-center align-self-center align-items-center"
-                src={html}
-                alt="HTML5"
-                title="HTML5"
-                rel="noopener"
-              />
-            </div>
-            <div className="col border-0 b-0 p-1">
-              <img
-                className="techaside tech-card rounded-circle p-0 w-auto m-0 justify-content-center align-content-center text-center align-self-center align-items-center"
-                src={css}
-                alt="CSS3"
-                title="CSS3"
-                rel="noopener"
-              />
-            </div>
-            <div className="col border-0 b-0 p-1">
-              <img
-                className="techaside tech-card rounded-circle p-0 w-auto m-0 justify-content-center align-content-center text-center align-self-center align-items-center"
-                src={js}
-                alt="JavaScript"
-                title="JavaScript"
-                rel="noopener"
-              />
-            </div>
-            <div className="col border-0 b-0 p-1">
-              <img
-                className="techaside tech-card rounded-circle p-0 w-auto m-0 justify-content-center align-content-center text-center align-self-center align-items-center"
-                src={react}
-                alt="React"
-                title="React"
-                rel="noopener"
-              />
-            </div>
-            <div className="col border-0 b-0 p-1">
-              <img
-                className="techaside bg-white tech-card rounded-circle p-0 w-auto m-0 justify-content-center align-content-center text-center align-self-center align-items-center"
-                src={mysql}
-                alt="MySQL"
-                title="MySQL"
-                rel="noopener"
-              />
-            </div>
-          </div>
-          <br />
-        </div>
-      </aside>
+    <Tech />
       <br />
       {/*CONTATO*/}
       <section className="corPrimaria p-2">
@@ -1101,9 +1045,6 @@ const App = () => {
         </aside>
       </section>
       <br />
-      {/* FOOTER */}
-      <Footer />
-
     </>
   );
 };
