@@ -6,9 +6,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    transition: 1s ease-in-out;
  }
 
- body:hover{
-        transition: 1s ease-in-out;
- }
+ 
