@@ -1,7 +1,14 @@
 body {
+    height: 100vh;
+    background-size: 110%;
     background-color: #00a991;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    transition: 1s ease-in-out;
+ }
+
+ body:hover{
+        transition: 1s ease-in-out;
  }
