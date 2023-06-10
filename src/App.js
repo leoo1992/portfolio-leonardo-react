@@ -15,7 +15,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./css/style.css";
 import "./css/responsive.css";
 // assets
-import foto3x4 from "./assets/foto3x4.png";
 import curriculo from "./assets/Leonardo Curriculo.pdf";
 import pokedex from "./assets/pokedex.png";
 import imc from "./assets/imc.png";
@@ -28,14 +27,16 @@ import mediasVarias from "./assets/mediasVarias.png";
 import valoresIguais from "./assets/valoresIguais.png";
 
 //COMPONENTS
-import SobreMin from "./components/SobreMin"; 
-import Tech from "./components/Tech"; 
+import SobreMin from "./components/SobreMin";
+import Tech from "./components/Tech";
+import FotoPerfil from "./components/FotoPerfil";
 
 
 library.add(fab, fas);
 Modal.setAppElement("#root");
+
 // Modal
-function ModalActive({ isOpen, closeModal }){
+function ModalActive({ isOpen, closeModal }) {
   return (
     <div className="p-0 mt-5">
       <Modal
@@ -148,9 +149,9 @@ function ModalActive({ isOpen, closeModal }){
       </Modal>
     </div>
   );
-};
+}
 // Navbar
-function NavbarOffcanvas({ isOpen, closeNav }){
+function NavbarOffcanvas({ isOpen, closeNav }) {
   let [modalIsOpen, setModalIsOpen] = useState(false);
   let openModal = () => {
     setModalIsOpen(true);
@@ -320,10 +321,9 @@ function NavbarOffcanvas({ isOpen, closeNav }){
       </Modal>
     </div>
   );
-};
+}
 
-
-function App(){
+function App() {
   let [modalIsOpen, setModalIsOpen] = useState(false);
   let openModal = () => {
     setModalIsOpen(true);
@@ -425,13 +425,7 @@ function App(){
           <div className="row m-0 p-0">
             <div className="col coluna m-0 p-0"></div>
             <div className="col-4 coluna-centro-foto corPrimaria m-0 pt-3">
-              <img
-                className="foto-perfil m-0 p-0"
-                src={foto3x4}
-                alt="Foto Perfil"
-              />
-              <h3 className="m-0 p-0 text-center">Leonardo Santos</h3>
-              <h5>Desenvolvedor Front-end</h5>
+              <FotoPerfil />
               {/* MODAL CONTATO */}
               <br />
               <button
@@ -940,7 +934,7 @@ function App(){
       </div>
       <br />
       {/*TECHS */}
-    <Tech />
+      <Tech />
       <br />
       {/*CONTATO*/}
       <section className="corPrimaria p-2">
@@ -1047,5 +1041,5 @@ function App(){
       <br />
     </>
   );
-};
+}
 export default App;

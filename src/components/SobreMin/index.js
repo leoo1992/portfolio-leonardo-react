@@ -1,5 +1,4 @@
 import React from 'react';
-
 export default function SobreMin() {
   return (
     <section className="p-3 corPrimaria">
