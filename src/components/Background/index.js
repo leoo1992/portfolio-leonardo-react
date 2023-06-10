@@ -447,8 +447,8 @@ new Ribbons({
 })
   return (
 <div>
-  <div class="background"></div>
-  <div class="foreground"></div>
+  <div className="background"></div>
+  <div className="foreground"></div>
 </div>
   );
 };
