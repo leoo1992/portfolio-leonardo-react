@@ -1000,7 +1000,7 @@ function App() {
             <h3 className="text-center p-2" id="contato">
               Contato
             </h3>
-            <aside className="container-fluid text-center justify-content-center align-content-center text-center align-self-center align-items-center">
+            <aside className="container-fluid justify-content-center align-content-center text-center align-self-center align-items-center">
               <div className="row fs-1 justify-content-center align-content-center text-center align-self-center align-items-center">
                 <div className="col border-0 b-0 p-0">
                   <a
