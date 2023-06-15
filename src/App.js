@@ -111,7 +111,7 @@ function ModalActive({ isOpen, closeModal }) {
             </div>
             <div className="col border-0 b-0 p-0">
               <a
-                href="Leonardo Curriculo.pdf"
+                href={curriculo}
                 target="_blank"
                 download
                 title="Currículo"
