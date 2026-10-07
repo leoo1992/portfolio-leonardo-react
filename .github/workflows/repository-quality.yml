@@ -8,7 +8,8 @@ permissions:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    steps:
+    
+    timeout-minutes: 20steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
