@@ -1,4 +1,4 @@
-name: Repository Quality
+name: Repository Quality + Application Build
 on:
   workflow_dispatch:
   push:
@@ -25,3 +25,18 @@ jobs:
         run: node quality/build.mjs
       - name: Docker build
         run: docker build -f quality/Dockerfile -t repository-quality .
+
+  application-build:
+    name: Application production build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Build application
+        run: npm run build
